@@ -1,0 +1,4666 @@
+/* =========================================
+   ROOT / GLOBAL
+========================================= */
+
+:root {
+    --green: #173c2d;
+    --dark-green: #0d251b;
+    --gold: #c6a15b;
+    --cream: #f5f1e8;
+    --white: #ffffff;
+    --text: #252525;
+    --light-text: #6f6f6f;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+
+.section-label,
+.eyebrow {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
+.section-heading {
+    max-width: 750px;
+    margin-bottom: 70px;
+}
+
+
+.section-heading h2,
+.intro h2,
+.accommodation-content h2,
+.team-building h2,
+.dining-content h2,
+.main-cta h2,
+.contact h2 {
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 500;
+    line-height: 0.95;
+    margin: 20px 0 25px;
+}
+
+
+.section-heading h2 em,
+.intro h2 em,
+.accommodation-content h2 em,
+.team-building h2 em,
+.dining-content h2 em,
+.main-cta h2 em,
+.contact h2 em {
+    color: var(--green);
+}
+
+
+.section-heading > p:last-child {
+    max-width: 650px;
+    color: var(--light-text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+    padding: 0 30px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+.btn.primary {
+    background: var(--gold);
+    color: var(--white);
+    border: 1px solid var(--gold);
+}
+
+
+.btn.primary:hover {
+    background: transparent;
+    color: var(--gold);
+}
+
+
+.btn.secondary {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: var(--white);
+}
+
+
+.btn.secondary:hover {
+    background: var(--white);
+    color: var(--green);
+}
+
+
+.btn.secondary-dark {
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+
+.btn.secondary-dark:hover {
+    background: var(--green);
+    color: var(--white);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    color: var(--white);
+
+    transition: 0.3s ease;
+}
+
+
+.navbar.scrolled {
+    position: fixed;
+
+    background: var(--green);
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Logo */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+
+.logo span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+}
+
+
+.logo small {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    margin-top: 7px;
+}
+
+
+/* Navigation */
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.navbar nav a {
+    position: relative;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+
+.navbar nav a:hover,
+.navbar nav a.active {
+    color: var(--gold);
+}
+
+
+/* Enquire Button */
+
+.nav-button {
+    padding: 13px 22px;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
+}
+
+
+.nav-button:hover {
+    background: var(--gold);
+    color: var(--white);
+}
+
+
+/* Mobile menu */
+
+.menu-btn {
+    display: none;
+
+    background: transparent;
+    border: none;
+
+    color: var(--white);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        url("Images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: var(--white);
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(9, 28, 20, 0.78),
+            rgba(9, 28, 20, 0.55)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+
+    padding: 120px 20px 80px;
+}
+
+
+.hero h1 {
+    font-size: clamp(65px, 10vw, 125px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 25px 0;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.hero-text {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+.hero-location {
+    margin-top: 20px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+
+/* Scroll down */
+
+.scroll-down {
+    position: absolute;
+
+    bottom: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 2;
+}
+
+
+.scroll-down span {
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.scroll-down div {
+    width: 1px;
+    height: 40px;
+
+    background: var(--gold);
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.intro {
+    padding: 130px 0;
+
+    background: var(--cream);
+}
+
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+.intro-text {
+    padding-top: 25px;
+}
+
+
+.intro-text p {
+    font-size: 14px;
+
+    line-height: 2;
+
+    color: var(--light-text);
+
+    margin-bottom: 20px;
+}
+
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    color: var(--green);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.highlights {
+    background: var(--green);
+
+    padding: 70px 0;
+
+    color: var(--white);
+}
+
+
+.highlights-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.highlight-item {
+    text-align: center;
+
+    padding: 15px;
+
+    border-right:
+        1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+.highlight-item:last-child {
+    border-right: none;
+}
+
+
+.highlight-item strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 65px;
+
+    font-weight: 500;
+
+    color: var(--gold);
+}
+
+
+.highlight-item span {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services {
+    padding: 130px 0;
+
+    background: var(--white);
+}
+
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.service-card {
+    position: relative;
+
+    padding: 55px 40px;
+
+    background: var(--cream);
+
+    border: 1px solid #e5e1d8;
+
+    transition: 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+
+.service-number {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 45px;
+
+    color: var(--gold);
+
+    margin-bottom: 35px;
+}
+
+
+.service-tag {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.service-card h3 {
+    font-size: 42px;
+
+    font-weight: 500;
+
+    margin-bottom: 20px;
+}
+
+
+.service-card > p:not(.service-tag) {
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+.service-card a {
+    color: var(--green);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* Featured Service */
+
+.featured-service {
+    background: var(--green);
+
+    color: var(--white);
+
+    transform: scale(1.03);
+}
+
+
+.featured-service:hover {
+    transform: scale(1.03) translateY(-8px);
+}
+
+
+.featured-service > p:not(.service-tag) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+.featured-service a {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   CONFERENCE SECTION
+========================================= */
+
+.conference-section {
+    position: relative;
+
+    padding: 150px 0;
+
+    background:
+        url("Images/conference.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: var(--white);
+}
+
+
+.conference-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(13, 37, 27, 0.95),
+            rgba(13, 37, 27, 0.82)
+        );
+}
+
+
+.conference-section-content {
+    position: relative;
+    z-index: 2;
+}
+
+
+.conference-section h2 {
+    max-width: 750px;
+
+    margin: 20px 0 30px;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+
+.conference-section h2 em {
+    color: var(--gold);
+}
+
+
+.conference-section-content > p:not(.section-label) {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* Conference Points */
+
+.conference-points {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+
+    margin: 70px 0 50px;
+}
+
+
+.conference-points > div {
+    border-left:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    padding-left: 20px;
+}
+
+
+.conference-points span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    color: var(--gold);
+}
+
+
+.conference-points h4 {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin: 18px 0 10px;
+}
+
+
+.conference-points p {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   ACCOMMODATION
+========================================= */
+
+.accommodation-preview {
+    padding: 130px 0;
+
+    background: var(--cream);
+}
+
+
+.accommodation-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.accommodation-content > p:not(.section-label) {
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 30px;
+}
+
+
+.accommodation-features {
+    list-style: none;
+
+    margin-bottom: 35px;
+}
+
+
+.accommodation-features li {
+    padding: 12px 0;
+
+    border-bottom: 1px solid #ddd8ce;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+.accommodation-features li::before {
+    content: "—";
+
+    color: var(--gold);
+
+    margin-right: 10px;
+}
+
+
+.accommodation-image {
+    height: 620px;
+
+    overflow: hidden;
+}
+
+
+.accommodation-image img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.accommodation-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   EXPERIENCES
+========================================= */
+
+.experiences-preview {
+    padding: 130px 0;
+
+    background: var(--white);
+}
+
+
+.experience-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.experience-card {
+    padding: 40px 30px;
+
+    border: 1px solid #e8e8e8;
+
+    transition: 0.3s ease;
+}
+
+
+.experience-card:hover {
+    background: var(--green);
+
+    color: var(--white);
+
+    transform: translateY(-5px);
+}
+
+
+.experience-card span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    color: var(--gold);
+
+    margin-bottom: 35px;
+}
+
+
+.experience-card h3 {
+    font-size: 30px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.experience-card p {
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: var(--light-text);
+
+    transition: 0.3s ease;
+}
+
+
+.experience-card:hover p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   TEAM BUILDING
+========================================= */
+
+.team-building {
+    padding: 120px 0;
+
+    background: var(--green);
+
+    color: var(--red);
+}
+
+
+.team-building-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.team-building h2 {
+    color: var(--black);
+}
+
+
+.team-building h2 em {
+    color: var(--black);
+}
+
+
+.team-building p:not(.section-label) {
+    max-width: 550px;
+
+    color: rgba(2, 1, 1, 0.938);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.team-building-list {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+.team-building-list span {
+    padding: 20px;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.18);
+
+    font-size: 12px;
+
+    transition: 0.3s ease;
+}
+
+
+.team-building-list span:hover {
+    background: var(--green);
+
+    border-color: var(--gold);
+}
+
+
+/* =========================================
+   EVENTS
+========================================= */
+
+.events {
+    padding: 130px 0;
+
+    background: var(--cream);
+}
+
+
+.events-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.events-grid div {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 180px;
+
+    background: var(--green);
+
+    color: var(--white);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    text-align: center;
+
+    padding: 20px;
+
+    transition: 0.3s ease;
+}
+
+
+.events-grid div:hover {
+    background: var(--gold);
+
+    transform: translateY(-5px);
+}
+
+
+.events-button {
+    text-align: center;
+
+    margin-top: 45px;
+}
+
+
+/* =========================================
+   DINING
+========================================= */
+
+.dining {
+    padding: 130px 0;
+
+    background: var(--white);
+}
+
+
+.dining-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.dining-image {
+    height: 600px;
+
+    overflow: hidden;
+}
+
+
+.dining-image img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s ease;
+}
+
+
+.dining-image:hover img {
+    transform: scale(1.05);
+}
+
+
+.dining-content > p:not(.section-label) {
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 35px;
+}
+
+
+.dining-options {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+
+.dining-options div {
+    border-top: 1px solid #ddd;
+
+    padding-top: 20px;
+}
+
+
+.dining-options strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}
+
+
+.dining-options span {
+    display: block;
+
+    color: var(--light-text);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MAIN CTA
+========================================= */
+
+.main-cta {
+    padding: 140px 20px;
+
+    background: var(--cream);
+
+    text-align: center;
+}
+
+
+.main-cta h2 {
+    max-width: 800px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.main-cta > .container > p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.cta-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact {
+    padding: 130px 0;
+
+    background: var(--white);
+}
+
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.contact-description {
+    max-width: 500px;
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.contact-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+
+.contact-details > div {
+    border-bottom: 1px solid #e5e5e5;
+
+    padding-bottom: 25px;
+}
+
+
+.contact-details span {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 8px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+
+.contact-details strong,
+.contact-details a {
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    transition: 0.3s ease;
+}
+
+
+.contact-details a:hover {
+    color: var(--gold);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--dark-green);
+
+    color: var(--white);
+
+    padding-top: 90px;
+}
+
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 70px;
+}
+
+
+.footer-logo {
+    margin-bottom: 25px;
+}
+
+
+.footer-grid > div:first-child > p {
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    margin-bottom: 10px;
+}
+
+
+.footer-tagline {
+    color: var(--gold) !important;
+
+    text-transform: uppercase;
+
+    font-size: 9px !important;
+
+    letter-spacing: 2px;
+}
+
+
+.footer-grid h4 {
+    font-family: "Montserrat", sans-serif;
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+
+.footer-grid a {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 11px;
+
+    margin-bottom: 13px;
+
+    transition: 0.3s ease;
+}
+
+
+.footer-grid a:hover {
+    color: var(--gold);
+}
+
+
+.copyright {
+    padding: 25px 5%;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+
+    .intro-grid,
+    .accommodation-grid,
+    .team-building-grid,
+    .dining-grid,
+    .contact-grid {
+        gap: 60px;
+    }
+
+
+    .conference-points {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .experience-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .events-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    /* Navigation */
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+
+    .navbar nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        background: var(--green);
+
+        padding: 20px 5%;
+    }
+
+
+    .navbar nav.active {
+        display: flex;
+    }
+
+
+    .navbar nav a {
+        width: 100%;
+
+        padding: 15px 0;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .nav-button {
+        display: none;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: 850px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(55px, 16vw, 85px);
+    }
+
+
+    .hero-text {
+        font-size: 13px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .hero-buttons .btn {
+        width: min(280px, 100%);
+    }
+
+
+    /* Layouts */
+
+    .intro-grid,
+    .accommodation-grid,
+    .team-building-grid,
+    .dining-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .featured-service {
+        transform: none;
+    }
+
+
+    .featured-service:hover {
+        transform: translateY(-8px);
+    }
+
+
+    /* Highlights */
+
+    .highlights-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .highlight-item:nth-child(2) {
+        border-right: none;
+    }
+
+
+    .highlight-item:nth-child(1),
+    .highlight-item:nth-child(2) {
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.15);
+    }
+
+
+    /* Conference */
+
+    .conference-points {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Experiences */
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Events */
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Accommodation */
+
+    .accommodation-image,
+    .dining-image {
+        height: 450px;
+    }
+
+
+    /* Dining */
+
+    .dining-options {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CTA */
+
+    .cta-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .cta-buttons .btn {
+        width: min(280px, 100%);
+    }
+
+
+    /* Footer */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: 760px;
+    }
+
+
+    .hero-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .logo span {
+        font-size: 30px;
+    }
+
+
+    .section-heading {
+        margin-bottom: 45px;
+    }
+
+
+    .intro,
+    .services,
+    .accommodation-preview,
+    .experiences-preview,
+    .events,
+    .dining,
+    .contact {
+        padding: 85px 0;
+    }
+
+
+    .team-building {
+        padding: 85px 0;
+    }
+
+
+    .conference-section {
+        padding: 100px 0;
+    }
+
+
+    .main-cta {
+        padding: 100px 20px;
+    }
+
+
+    .highlights {
+        padding: 50px 0;
+    }
+
+
+    .highlight-item strong {
+        font-size: 50px;
+    }
+
+
+    .service-card {
+        padding: 45px 30px;
+    }
+
+
+    .team-building-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .events-grid div {
+        min-height: 140px;
+    }
+
+}
+
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+
+/* Page Hero */
+
+.page-hero {
+    position: relative;
+
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: url("Images/about-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: var(--white);
+}
+
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(9, 28, 20, 0.78),
+            rgba(9, 28, 20, 0.62)
+        );
+}
+
+
+.page-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    padding: 120px 20px 70px;
+}
+
+
+.page-hero h1 {
+    margin: 25px 0;
+
+    font-size: clamp(60px, 9vw, 110px);
+
+    line-height: 0.9;
+
+    font-weight: 500;
+}
+
+
+.page-hero h1 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.page-hero-content > p:last-child {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* About Introduction */
+
+.about-intro {
+    padding: 130px 0;
+
+    background: var(--cream);
+}
+
+
+.about-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.about-intro h2 {
+    font-size: clamp(50px, 6vw, 80px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+
+.about-intro h2 em {
+    color: var(--green);
+}
+
+
+.about-intro-text p {
+    margin-bottom: 22px;
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+/* Location */
+
+.about-location {
+    padding: 130px 0;
+
+    background: var(--white);
+}
+
+
+.about-location-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.about-location-image {
+    height: 620px;
+
+    overflow: hidden;
+}
+
+
+.about-location-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.about-location-image:hover img {
+    transform: scale(1.05);
+}
+
+
+.about-location-content h2 {
+    font-size: clamp(50px, 6vw, 78px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin: 20px 0 30px;
+}
+
+
+.about-location-content h2 em {
+    color: var(--green);
+}
+
+
+.about-location-content > p:not(.section-label) {
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+.location-facts {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+.location-facts div {
+    padding-top: 20px;
+
+    border-top: 1px solid #ddd;
+}
+
+
+.location-facts strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    color: var(--green);
+
+    margin-bottom: 5px;
+}
+
+
+.location-facts span {
+    display: block;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--light-text);
+
+    line-height: 1.5;
+}
+
+
+/* Philosophy */
+
+.about-philosophy {
+    padding: 130px 0;
+
+    background: var(--green);
+
+    color: var(--white);
+}
+
+
+.about-philosophy h2 {
+    max-width: 850px;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+
+    margin: 20px 0;
+}
+
+
+.about-philosophy h2 em {
+    color: var(--gold);
+}
+
+
+.philosophy-text {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+    margin-bottom: 70px;
+}
+
+
+.philosophy-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.philosophy-grid > div {
+    padding: 40px 30px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+}
+
+
+.philosophy-grid span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    color: var(--gold);
+
+    margin-bottom: 30px;
+}
+
+
+.philosophy-grid h3 {
+    font-size: 38px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.philosophy-grid p {
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* Difference */
+
+.about-difference {
+    padding: 130px 0;
+
+    background: var(--cream);
+}
+
+
+.difference-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.difference-card {
+    padding: 45px 40px;
+
+    background: var(--white);
+
+    border: 1px solid #e5e1d8;
+
+    transition: 0.3s ease;
+}
+
+
+.difference-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.07);
+}
+
+
+.difference-card span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    color: var(--gold);
+
+    margin-bottom: 25px;
+}
+
+
+.difference-card h3 {
+    font-size: 36px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.difference-card p {
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* Experience CTA */
+
+.about-experience {
+    position: relative;
+
+    padding: 150px 0;
+
+    background:
+        url("Images/about-experience.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+.about-experience-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(13, 37, 27, 0.88),
+            rgba(13, 37, 27, 0.75)
+        );
+}
+
+
+.about-experience-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.about-experience h2 {
+    max-width: 900px;
+
+    margin: 20px auto 30px;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+}
+
+
+.about-experience h2 em {
+    color: var(--gold);
+}
+
+
+.about-experience-content > p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* About Mobile */
+
+@media (max-width: 768px) {
+
+    .page-hero {
+        min-height: 650px;
+    }
+
+
+    .page-hero h1 {
+        font-size: 60px;
+    }
+
+
+    .about-intro-grid,
+    .about-location-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .about-location-image {
+        height: 450px;
+    }
+
+
+    .location-facts {
+        grid-template-columns: 1fr;
+    }
+
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .difference-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-experience {
+        padding: 100px 0;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .about-intro,
+    .about-location,
+    .about-philosophy,
+    .about-difference {
+        padding: 85px 0;
+    }
+
+
+    .about-location-image {
+        height: 380px;
+    }
+
+
+    .philosophy-grid h3,
+    .difference-card h3 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================================
+   GALLERY PAGE
+========================================= */
+
+.gallery-hero {
+    background-image: url("Images/gallery-hero.jpg");
+}
+
+
+/* Gallery Introduction */
+
+.gallery-intro {
+    padding: 120px 0 80px;
+
+    background: var(--cream);
+}
+
+
+.gallery-intro h2 {
+    max-width: 850px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin: 20px 0 25px;
+}
+
+
+.gallery-intro h2 em {
+    color: var(--green);
+}
+
+
+.gallery-intro > .container > p:last-child {
+    max-width: 680px;
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+/* Gallery Sections */
+
+.gallery-section {
+    padding: 100px 0;
+
+    background: var(--white);
+}
+
+
+.gallery-dark {
+    background: var(--green);
+
+    color: var(--white);
+}
+
+
+.gallery-events {
+    background: var(--cream);
+}
+
+
+.gallery-section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    margin-bottom: 45px;
+}
+
+
+.gallery-section-heading h2 {
+    font-size: clamp(45px, 6vw, 70px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-top: 15px;
+}
+
+
+.gallery-section-heading > p {
+    max-width: 420px;
+
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+.gallery-dark .gallery-section-heading > p {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* Gallery Grid */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-auto-rows: 280px;
+
+    gap: 15px;
+}
+
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+
+    filter: brightness(0.8);
+}
+
+
+.gallery-large {
+    grid-row: span 2;
+}
+
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+
+.gallery-tall {
+    grid-row: span 2;
+}
+
+
+/* Gallery CTA */
+
+.gallery-cta {
+    padding: 130px 20px;
+
+    background: var(--white);
+
+    text-align: center;
+}
+
+
+.gallery-cta h2 {
+    max-width: 800px;
+
+    margin: 20px auto 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+
+.gallery-cta h2 em {
+    color: var(--green);
+}
+
+
+.gallery-cta > .container > p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+}
+
+
+.gallery-cta-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* Gallery Mobile */
+
+@media (max-width: 768px) {
+
+    .gallery-intro {
+        padding: 90px 0 60px;
+    }
+
+
+    .gallery-section {
+        padding: 80px 0;
+    }
+
+
+    .gallery-section-heading {
+        display: block;
+
+        margin-bottom: 35px;
+    }
+
+
+    .gallery-section-heading > p {
+        margin-top: 20px;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+
+        grid-auto-rows: 220px;
+    }
+
+
+    .gallery-large {
+        grid-row: span 2;
+    }
+
+
+    .gallery-wide {
+        grid-column: span 2;
+    }
+
+
+    .gallery-tall {
+        grid-row: span 2;
+    }
+
+
+    .gallery-cta {
+        padding: 100px 20px;
+    }
+
+
+    .gallery-cta-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .gallery-cta-buttons .btn {
+        width: min(280px, 100%);
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 280px;
+    }
+
+
+    .gallery-large,
+    .gallery-wide,
+    .gallery-tall {
+        grid-column: span 1;
+
+        grid-row: span 1;
+    }
+
+
+    .gallery-hero {
+        min-height: 600px;
+    }
+
+}
+
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-hero {
+    background-image: url("Images/contact-hero.jpg");
+}
+
+
+/* Main Contact */
+
+.contact-main {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.contact-heading {
+    margin-bottom: 70px;
+}
+
+
+.contact-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-top: 20px;
+}
+
+
+.contact-heading h2 em {
+    color: var(--green);
+}
+
+
+.contact-grid-new {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+/* Contact Information */
+
+.contact-information {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+}
+
+
+.contact-info-item {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 20px;
+
+    padding: 28px 0;
+
+    border-top: 1px solid #dcd7cd;
+}
+
+
+.contact-number {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+
+    color: var(--gold);
+}
+
+
+.contact-info-item > div > span {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--light-text);
+
+    margin-bottom: 10px;
+}
+
+
+.contact-info-item a,
+.contact-info-item p {
+    display: block;
+
+    color: var(--dark);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    text-decoration: none;
+
+    margin: 0 0 3px;
+}
+
+
+.contact-info-item a:hover {
+    color: var(--green);
+}
+
+
+/* WhatsApp */
+
+.whatsapp-large {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: var(--green);
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+
+.whatsapp-large:hover {
+    transform: translateY(-4px);
+
+    background: #183c2a;
+}
+
+
+.whatsapp-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+
+.whatsapp-large span:nth-child(2) {
+    flex: 1;
+
+    font-size: 14px;
+}
+
+
+.whatsapp-large small {
+    display: block;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255,255,255,0.55);
+
+    margin-bottom: 5px;
+}
+
+
+.whatsapp-large strong {
+    font-size: 22px;
+
+    color: var(--gold);
+}
+
+
+/* Form */
+
+.contact-form-wrapper {
+    padding: 50px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.06);
+}
+
+
+.contact-form-wrapper h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 55px;
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin: 20px 0 40px;
+}
+
+
+.contact-form-wrapper h3 em {
+    color: var(--green);
+}
+
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+
+    color: var(--light-text);
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ddd8ce;
+
+    background: #faf9f6;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+
+    transition: border 0.3s ease;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--green);
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+.contact-submit {
+    width: 100%;
+
+    padding: 18px 25px;
+
+    border: none;
+
+    background: var(--green);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition: 0.3s ease;
+}
+
+
+.contact-submit:hover {
+    background: #183c2a;
+}
+
+
+.contact-submit span {
+    font-size: 18px;
+
+    color: var(--gold);
+}
+
+
+.form-note {
+    margin-top: 15px;
+
+    font-size: 9px;
+
+    color: #999;
+
+    line-height: 1.6;
+}
+
+
+/* Location */
+
+.contact-location {
+    padding: 120px 0;
+
+    background: var(--white);
+}
+
+
+.location-heading {
+    margin-bottom: 50px;
+}
+
+
+.location-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin-top: 20px;
+}
+
+
+.location-heading h2 em {
+    color: var(--green);
+}
+
+
+.location-map {
+    height: 500px;
+
+    overflow: hidden;
+}
+
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(13, 37, 27, 0.88),
+            rgba(13, 37, 27, 0.88)
+        ),
+        url("Images/map-background.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+}
+
+
+.map-placeholder span {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+}
+
+
+.map-placeholder h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 55px;
+
+    font-weight: 500;
+
+    margin: 15px 0;
+}
+
+
+.map-placeholder p {
+    color: rgba(255,255,255,0.65);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+.map-button {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+
+.map-button:hover {
+    background: var(--gold);
+
+    color: var(--dark);
+
+    border-color: var(--gold);
+}
+
+
+/* Services */
+
+.contact-services {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.contact-services > .container > h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    margin: 20px 0 60px;
+}
+
+
+.contact-services h2 em {
+    color: var(--green);
+}
+
+
+.contact-service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.contact-service-card {
+    display: block;
+
+    padding: 40px;
+
+    background: var(--white);
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    border: 1px solid #e4dfd5;
+
+    transition: 0.3s ease;
+}
+
+
+.contact-service-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.06);
+}
+
+
+.contact-service-card > span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 35px;
+
+    color: var(--gold);
+
+    margin-bottom: 30px;
+}
+
+
+.contact-service-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 36px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-service-card p {
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: var(--light-text);
+
+    margin-bottom: 25px;
+}
+
+
+.contact-service-card strong {
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--green);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .contact-main,
+    .contact-location,
+    .contact-services {
+        padding: 85px 0;
+    }
+
+
+    .contact-grid-new {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .contact-form-wrapper {
+        padding: 30px 20px;
+    }
+
+
+    .contact-form-wrapper h3 {
+        font-size: 48px;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .location-map {
+        height: 420px;
+    }
+
+
+    .map-placeholder h3 {
+        font-size: 45px;
+    }
+
+
+    .contact-service-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .contact-heading h2,
+    .location-heading h2 {
+        font-size: 55px;
+    }
+
+
+    .contact-info-item {
+        grid-template-columns: 35px 1fr;
+    }
+
+
+    .whatsapp-large {
+        padding: 20px 15px;
+    }
+
+}
+
+
+/* =========================================
+   CONFERENCES PAGE
+========================================= */
+
+.conference-hero {
+    background-image: url("Images/conference-hero.jpg");
+}
+
+
+/* Conference Intro */
+
+.conference-intro {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.conference-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.conference-intro h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin-top: 20px;
+}
+
+
+.conference-intro h2 em {
+    color: var(--green);
+}
+
+
+.conference-intro-grid > div:last-child p {
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+
+.conference-intro-grid strong {
+    color: var(--green);
+}
+
+
+/* Facilities */
+
+.conference-facilities {
+    padding: 120px 0;
+
+    background: var(--white);
+}
+
+
+.conference-section-heading {
+    max-width: 850px;
+
+    margin-bottom: 60px;
+}
+
+
+.conference-section-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0;
+}
+
+
+.conference-section-heading h2 em {
+    color: var(--green);
+}
+
+
+.conference-section-heading > p:last-child {
+    max-width: 600px;
+
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* Feature Cards */
+
+.conference-feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.conference-feature {
+    background: var(--cream);
+}
+
+
+.feature-image {
+    height: 300px;
+
+    overflow: hidden;
+}
+
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+.conference-feature:hover .feature-image img {
+    transform: scale(1.05);
+}
+
+
+.feature-content {
+    padding: 35px;
+}
+
+
+.feature-content > span {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--gold);
+
+    font-size: 35px;
+}
+
+
+.feature-content h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin: 20px 0 15px;
+}
+
+
+.feature-content p {
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+.feature-content strong {
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--green);
+}
+
+
+/* Why Ochi */
+
+.conference-why {
+    padding: 130px 0;
+
+    background: var(--green);
+
+    color: var(--white);
+}
+
+
+.conference-why-grid {
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+.conference-why-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0 30px;
+}
+
+
+.conference-why-content h2 em {
+    color: var(--gold);
+}
+
+
+.conference-why-content > p:not(.section-label) {
+    max-width: 600px;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
+}
+
+
+/* Stats */
+
+.conference-stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-left:
+        1px solid rgba(255,255,255,0.15);
+}
+
+
+.conference-stats div {
+    padding: 35px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.15);
+}
+
+
+.conference-stats strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 65px;
+
+    line-height: 1;
+
+    color: var(--gold);
+
+    margin-bottom: 10px;
+}
+
+
+.conference-stats span {
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    color: rgba(255,255,255,0.55);
+}
+
+
+/* Corporate Experience */
+
+.conference-experience {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.conference-experience-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.conference-experience-grid > div {
+    padding: 45px;
+
+    background: var(--white);
+
+    border: 1px solid #e5e0d6;
+
+    transition: 0.3s ease;
+}
+
+
+.conference-experience-grid > div:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.06);
+}
+
+
+.conference-experience-grid span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--gold);
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+}
+
+
+.conference-experience-grid h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 40px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.conference-experience-grid p {
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+.conference-experience-grid a {
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* Team Building */
+
+.team-building {
+    padding: 120px 0;
+
+    background: var(--white);
+}
+
+
+.team-building-heading {
+    max-width: 750px;
+
+    margin-bottom: 60px;
+}
+
+
+.team-building-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0;
+}
+
+
+.team-building-heading h2 em {
+    color: var(--green);
+}
+
+
+.team-building-heading > p:last-child {
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+.team-activities {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: #ddd;
+}
+
+
+.team-activities > div {
+    min-height: 180px;
+
+    padding: 30px;
+
+    background: var(--cream);
+
+    transition: 0.3s ease;
+}
+
+
+.team-activities > div:hover {
+    background: var(--green);
+
+    color: white;
+}
+
+
+.team-activities span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    color: var(--gold);
+
+    margin-bottom: 25px;
+}
+
+
+.team-activities h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+}
+
+
+/* Enquiry */
+
+.conference-enquiry {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.enquiry-heading {
+    max-width: 750px;
+
+    margin-bottom: 60px;
+}
+
+
+.enquiry-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0;
+}
+
+
+.enquiry-heading h2 em {
+    color: var(--green);
+}
+
+
+.enquiry-heading > p:last-child {
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+.conference-form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.conference-form-grid .full-width {
+    grid-column: span 2;
+}
+
+
+.conference-enquiry .form-group label {
+    display: block;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    color: var(--light-text);
+
+    margin-bottom: 8px;
+}
+
+
+.conference-enquiry .form-group input,
+.conference-enquiry .form-group textarea {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #d9d4ca;
+
+    background: var(--white);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+
+.conference-enquiry .form-group input:focus,
+.conference-enquiry .form-group textarea:focus {
+    border-color: var(--green);
+}
+
+
+.conference-submit {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 20px 25px;
+
+    border: none;
+
+    background: var(--green);
+
+    color: white;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.conference-submit:hover {
+    background: #183c2a;
+}
+
+
+.conference-submit span {
+    color: var(--gold);
+
+    font-size: 20px;
+}
+
+
+/* Final CTA */
+
+.conference-final-cta {
+    padding: 130px 20px;
+
+    background:
+        linear-gradient(
+            rgba(10,32,23,0.92),
+            rgba(10,32,23,0.92)
+        ),
+        url("Images/conference-hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.conference-final-cta h2 {
+    max-width: 900px;
+
+    margin: 20px auto 40px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+}
+
+
+.conference-final-cta h2 em {
+    color: var(--gold);
+}
+
+
+/* Conference Mobile */
+
+@media (max-width: 768px) {
+
+    .conference-intro,
+    .conference-facilities,
+    .conference-why,
+    .conference-experience,
+    .team-building,
+    .conference-enquiry {
+        padding: 85px 0;
+    }
+
+
+    .conference-intro-grid,
+    .conference-why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .conference-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .conference-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-activities {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .conference-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .conference-form-grid .full-width {
+        grid-column: span 1;
+    }
+
+
+    .conference-stats {
+        border-left: none;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .team-activities {
+        grid-template-columns: 1fr;
+    }
+
+
+    .conference-stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .conference-stats div {
+        border-bottom:
+            1px solid rgba(255,255,255,0.15);
+    }
+
+}
+
+/* =========================================
+   ACCOMMODATION PAGE
+========================================= */
+
+.accommodation-hero {
+    background-image: url("Images/accommodation-hero.jpg");
+}
+
+
+/* Intro */
+
+.accommodation-intro {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.accommodation-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+
+.accommodation-intro h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin-top: 20px;
+}
+
+
+.accommodation-intro h2 em {
+    color: var(--green);
+}
+
+
+.accommodation-intro-grid > div:last-child p {
+    color: var(--light-text);
+
+    font-size: 14px;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+
+/* Rooms */
+
+.rooms-section {
+    padding: 120px 0;
+
+    background: var(--white);
+}
+
+
+.rooms-heading {
+    max-width: 800px;
+
+    margin-bottom: 60px;
+}
+
+
+.rooms-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0;
+}
+
+
+.rooms-heading h2 em {
+    color: var(--green);
+}
+
+
+.rooms-heading > p:last-child {
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+.rooms-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.room-card {
+    background: var(--cream);
+
+    overflow: hidden;
+}
+
+
+.room-image {
+    position: relative;
+
+    height: 430px;
+
+    overflow: hidden;
+}
+
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+.room-card:hover .room-image img {
+    transform: scale(1.05);
+}
+
+
+.room-number {
+    position: absolute;
+
+    top: 25px;
+    left: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--green);
+
+    color: white;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 25px;
+}
+
+
+.room-content {
+    padding: 40px;
+}
+
+
+.room-type {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+
+    margin-bottom: 12px;
+}
+
+
+.room-content h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin-bottom: 20px;
+}
+
+
+.room-content > p {
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+}
+
+
+.room-features {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+
+.room-features span {
+    padding: 8px 12px;
+
+    border: 1px solid #d8d2c7;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--light-text);
+}
+
+
+.room-button {
+    display: inline-block;
+
+    padding: 15px 20px;
+
+    background: var(--green);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+
+.room-button:hover {
+    background: #183c2a;
+}
+
+
+/* Amenities */
+
+.accommodation-amenities {
+    padding: 120px 0;
+
+    background: var(--green);
+
+    color: white;
+}
+
+
+.amenities-heading {
+    margin-bottom: 60px;
+}
+
+
+.amenities-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin-top: 20px;
+}
+
+
+.amenities-heading h2 em {
+    color: var(--gold);
+}
+
+
+.amenities-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top:
+        1px solid rgba(255,255,255,0.15);
+
+    border-left:
+        1px solid rgba(255,255,255,0.15);
+}
+
+
+.amenity {
+    min-height: 250px;
+
+    padding: 35px;
+
+    border-right:
+        1px solid rgba(255,255,255,0.15);
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.15);
+}
+
+
+.amenity span {
+    display: block;
+
+    color: var(--gold);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+.amenity h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.amenity p {
+    color: rgba(255,255,255,0.6);
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* HALA */
+
+.hala-section {
+    padding: 120px 0;
+
+    background: var(--white);
+}
+
+
+.hala-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.hala-image {
+    height: 550px;
+
+    overflow: hidden;
+}
+
+
+.hala-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.hala-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0 30px;
+}
+
+
+.hala-content h2 em {
+    color: var(--green);
+}
+
+
+.hala-content p:not(.section-label) {
+    max-width: 550px;
+
+    color: var(--light-text);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+/* Corporate Stay */
+
+.stay-conference {
+    padding: 130px 0;
+
+    background:
+        linear-gradient(
+            rgba(13,37,27,0.9),
+            rgba(13,37,27,0.9)
+        ),
+        url("Images/conference-hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.stay-conference-content {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+
+.stay-conference-content h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0 30px;
+}
+
+
+.stay-conference-content h2 em {
+    color: var(--gold);
+}
+
+
+.stay-conference-content > p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+/* Experience */
+
+.accommodation-experience {
+    padding: 120px 0;
+
+    background: var(--cream);
+}
+
+
+.experience-heading {
+    margin-bottom: 60px;
+}
+
+
+.experience-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 85px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin-top: 20px;
+}
+
+
+.experience-heading h2 em {
+    color: var(--green);
+}
+
+
+.experience-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.experience-card {
+    display: block;
+
+    padding: 40px;
+
+    background: var(--white);
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    border: 1px solid #e1dbd0;
+
+    transition: 0.3s ease;
+}
+
+
+.experience-card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--green);
+}
+
+
+.experience-card span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--gold);
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+}
+
+
+.experience-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 38px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.experience-card p {
+    color: var(--light-text);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+    margin-bottom: 25px;
+}
+
+
+.experience-card strong {
+    color: var(--green);
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* CTA */
+
+.accommodation-cta {
+    padding: 130px 20px;
+
+    background: var(--green);
+
+    color: white;
+
+    text-align: center;
+}
+
+
+.accommodation-cta h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 7vw, 90px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    margin: 20px 0 25px;
+}
+
+
+.accommodation-cta h2 em {
+    color: var(--gold);
+}
+
+
+.accommodation-cta > .container > p:not(.section-label) {
+    color: rgba(255,255,255,0.65);
+
+    font-size: 13px;
+
+    margin-bottom: 35px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .accommodation-intro,
+    .rooms-section,
+    .accommodation-amenities,
+    .hala-section,
+    .accommodation-experience {
+        padding: 85px 0;
+    }
+
+
+    .accommodation-intro-grid,
+    .hala-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .room-image {
+        height: 350px;
+    }
+
+
+    .amenities-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .hala-image {
+        height: 400px;
+    }
+
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .room-content {
+        padding: 30px 20px;
+    }
+
+
+    .room-content h3 {
+        font-size: 42px;
+    }
+
+}
+
+
+.hero {
+    min-height: 100vh;
+
+    background-image: url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
